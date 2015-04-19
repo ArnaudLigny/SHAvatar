@@ -1,0 +1,6 @@
+{
+    "require": {
+        "silex/silex": "~1.2",
+        "intervention/image": "~2.1"
+    }
+}

@@ -11,7 +11,7 @@ For example, if the e-mail address is ```nickname@domain.tld```, the image reque
 ### Add avatar image
 
 1. The image file should be named ```HASH-80x80.jpg``` (where _HASH_ is a [MD5](http://wikipedia.org/wiki/MD5) hash of your email)
-2. Put the file in ```web/images```
+2. Put the file in ```web/avatar/images```
 
 ### Image request
 

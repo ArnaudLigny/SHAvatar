@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f37c99c16563a912a1ed01087db5abb1",
+    "hash": "eb03fea17ce327d722d16c9a579fca23",
     "packages": [
         {
             "name": "intervention/image",

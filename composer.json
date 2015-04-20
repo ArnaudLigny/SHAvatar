@@ -1,6 +1,20 @@
 {
-    "require": {
-        "silex/silex": "~1.2",
-        "intervention/image": "~2.1"
+  "name": "narno/shavatar",
+  "type": "project",
+  "description": "Self-Hosted Avatar solution.",
+  "keywords": ["avatar", "self-hosted"],
+  "homepage": "https://github.com/Narno/SHAvatar",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Arnaud Ligny",
+      "email": "arnaud@ligny.org",
+      "homepage": "http://narno.org",
+      "role": "Developer"
     }
+  ],
+  "require": {
+    "silex/silex": "~1.2",
+    "intervention/image": "~2.1"
+  }
 }

@@ -6,11 +6,11 @@ The idea is that everyone should be able to host himself his avatar image, provi
 
 ## Specifications
 
-The domain name of an email address can serve as an entry point to display the avatar matching email.
-
-For example, if the e-mail address is ```nickname@domain.tld```, the image request will be  ```http://domain.tld/avatar/aa745c786b697726fbbc0a3679d8de8e```.
+The domain name of an email address can be use as an entry point to display the avatar matching email.
 
 Image request follow [Gravatar's rules](https://en.gravatar.com/site/implement/images/) except for the domain name, obsiouly.
+
+For example, if the e-mail address is ```nickname@domain.tld```, the image request will be  ```http://domain.tld/avatar/aa745c786b697726fbbc0a3679d8de8e```.
 
 ----
 

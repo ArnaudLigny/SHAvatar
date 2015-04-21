@@ -40,3 +40,7 @@ Please see the [composer.json](composer.json) file.
 ### Local test
 * Start local web server: ```php -S localhost:8000 -t web```
 * Request http://localhost:8000/avatar/HASH in your web browser
+
+### Demo
+
+arnaud(at)ligny(dot)org => http://ligny.org/avatar/9ea5082df57281310fa93db64c70f88b

@@ -16,30 +16,31 @@ For example, if the e-mail address is ```nickname@domain.tld```, the image reque
 
 ## PHP server implementation
 
-## Requirements
+### Requirements
 
 Please see the [composer.json](composer.json) file.
 
-## Install
+### Install
 
-* 1. Copy the `avatar` directory in the web-root of the virtual host your HTTP server
-* 2. Add those requirements in your composer.json:
-```
+1. Copy the ```avatar``` directory in the web-root of the virtual host your HTTP server
+2. Add those requirements in your ```composer.json```:
+```javascript
 "silex/silex": "~1.2",
 "intervention/image": "~2.1"
 ```
-* 3. Run Composer update
+And run ```composer update```
 
-## Usage
+### Usage
 
-### Add avatar image
+#### Add avatar image
 
-1. The image file should be named ```HASH-80x80.jpg``` (where _HASH_ is a [MD5](http://wikipedia.org/wiki/MD5) hash of your email)
-2. Put the file in ```web/avatar/images```
+1. The image file should be named ```{HASH}-80x80.jpg``` (where _{HASH}_ is a [MD5](http://wikipedia.org/wiki/MD5) hash of your email).
+2. Put the file in ```avatar/images``` directory.
 
-### Local test
-* Start local web server: ```php -S localhost:8000 -t web```
-* Request http://localhost:8000/avatar/HASH in your web browser
+#### Local test
+
+1. Start local Web server: ```php -S localhost:8000```
+2. Request http://localhost:8000/avatar/HASH in your web browser
 
 ### Demo
 

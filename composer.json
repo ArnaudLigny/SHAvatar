@@ -1,7 +1,7 @@
 {
   "name": "narno/shavatar",
   "type": "project",
-  "description": "Self-Hosted Avatar solution.",
+  "description": "Self-Hosted Avatar.",
   "keywords": ["avatar", "self-hosted"],
   "homepage": "https://github.com/Narno/SHAvatar",
   "license": "MIT",
@@ -15,7 +15,7 @@
   ],
   "require": {
     "php": ">=5.3.3",
-    "silex/silex": "~1.2",
-    "intervention/image": "~2.1"
+    "intervention/image": "~2.1",
+    "silex/silex": "~1.2"
   }
 }

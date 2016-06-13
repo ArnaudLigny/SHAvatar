@@ -6,7 +6,17 @@
  * file that was distributed with this source code.
  */
 
-require_once __DIR__.'/../../vendor/autoload.php';
+// trying to find autoload file
+switch (true) {
+    case (file_exists(__DIR__.'/../../vendor/autoload.php')):
+        require __DIR__.'/../../vendor/autoload.php';
+        break;
+    case (file_exists(__DIR__.'/../vendor/autoload.php')):
+        require __DIR__.'/../vendor/autoload.php';
+        break;
+    default:
+        echo 'Unable to locate Composer autoloader.'.PHP_EOL;
+}
 
 use Symfony\Component\HttpFoundation\Response;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -53,4 +63,3 @@ $app->error(function (\Exception $e, $code) use ($app) {
 });
 
 $app->run();
-// php -S localhost:8000 -t web

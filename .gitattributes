@@ -1,6 +1,6 @@
 # Files to exclude when creating archive
-.* export-ignore
-!.htaccess export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore
 composer.json export-ignore
 composer.lock export-ignore
 

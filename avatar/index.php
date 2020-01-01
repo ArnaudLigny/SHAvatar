@@ -6,45 +6,33 @@
  * file that was distributed with this source code.
  */
 
-// trying to find autoload file
-switch (true) {
-    case (file_exists(__DIR__.'/../../vendor/autoload.php')):
-        require __DIR__.'/../../vendor/autoload.php';
-        break;
-    case (file_exists(__DIR__.'/../vendor/autoload.php')):
-        require __DIR__.'/../vendor/autoload.php';
-        break;
-    default:
-        echo 'Unable to locate Composer autoloader.'.PHP_EOL;
-}
+require_once __DIR__.'/../vendor/autoload.php';
 
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Intervention\Image\ImageManagerStatic as Image;
 
 $app = new Silex\Application();
 $app['debug'] = true;
 
-$app->get('/{hash}', function ($hash) use ($app) {
+$app->get('/{hash}', function (Request $request, $hash) use ($app) {
     $image = __DIR__.'/images/'.$hash.'-80x80.jpg';
-    $size  = $app['request']->get('s');
+    $size  = $request->get('s');
     // read file if exists
     if (file_exists($image)) {
-        // readfile directly
-        if (!isset($size)) {
-            $stream = function () use ($image) {
-                readfile($image);
-            };
         // resize if "size" is set in the query string
-        } else {
-            $stream = function () use ($image, $size) {
-                echo Image::make($image)->resize($size, $size)->response();
-            };
+        if (isset($size)) {
+            return Image::make($image)->resize($size, $size)->response();
         }
+        // readfile directly
+        $stream = function () use ($image) {
+            readfile($image);
+        };
+        return $app->stream($stream, 200, array('Content-Type' => 'image/jpg'));
     // gravatar fallback if file doesn't exists
     } else {
-        return $app->redirect('http://www.gravatar.com/avatar/'.$hash.'.jpg');
+        return $app->redirect('https://www.gravatar.com/avatar/'.$hash.'.jpg');
     }
-    return $app->stream($stream, 200, array('Content-Type' => 'image/jpg'));
 })
 ->assert('hash', '[a-f0-9]{32}'); // assert hash is a valid md5 string
 

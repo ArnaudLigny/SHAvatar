@@ -9,13 +9,13 @@
     {
       "name": "Arnaud Ligny",
       "email": "arnaud@ligny.org",
-      "homepage": "http://narno.org",
+      "homepage": "https://narno.org",
       "role": "Developer"
     }
   ],
   "require": {
-    "php": ">=5.3.3",
-    "intervention/image": "~2.1",
-    "silex/silex": "~1.2"
+    "php": "^7.1",
+    "silex/silex": "^2.0",
+    "intervention/image": "^2.5"
   }
 }
